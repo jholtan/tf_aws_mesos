@@ -15,7 +15,7 @@ resource "aws_route53_record" "mesos" {
     name = "mesos.admin.${var.domain}"
     type = "A"
     ttl = "300"
-    records = ["${split(\",\", var.adminlb_public_ips)}"]
+    records = ["${split(",", var.adminlb_public_ips)}"]
 }
 
 resource "aws_route53_record" "marathon" {
@@ -23,6 +23,6 @@ resource "aws_route53_record" "marathon" {
     name = "marathon.admin.${var.domain}"
     type = "A"
     ttl = "300"
-    records = ["${split(\",\", var.adminlb_public_ips)}"]
+    records = ["${split(",", var.adminlb_public_ips)}"]
 }
 
